@@ -47,6 +47,10 @@ export default function Home({ data }) {
   return (
     <div className={`mainContainer ${styles.Home}`}>
 
+      <Head>
+        <title>Home - Comptek</title>
+      </Head>
+
       {/* Swiper */}
       <div className={styles.Swiper}>
         <Swiper
