@@ -6,15 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.5",
+    "@mdi/font": "^6.9.96",
+    "axios": "^0.27.2",
+    "mini-svg-data-uri": "^1.4.4",
     "next": "12.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.33.1",
+    "sass": "^1.53.0",
+    "strapi-plugin-duplicate-button": "^1.0.4",
+    "swiper": "^8.2.6"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
+    "autoprefixer": "^10.4.7",
     "eslint": "8.18.0",
-    "eslint-config-next": "12.2.0"
+    "eslint-config-next": "12.2.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
   }
 }

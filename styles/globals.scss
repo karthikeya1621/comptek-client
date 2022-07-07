@@ -1,0 +1,120 @@
+@import url(https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css);
+
+:root {
+  --color-brand: 0 81 181;
+  --header-height: 100px;
+  --carousel-height: 530px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Product Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Product Sans";
+  ;
+  src: url("../public/fonts/Product Sans Regular.ttf");
+}
+
+@font-face {
+  font-family: "Product Sans";
+  ;
+  src: url("../public/fonts/Product Sans Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: url("../public/fonts/Product Sans Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: url("../public/fonts/Product Sans Bold Italic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+.mainContainer {
+  @apply relative w-full;
+}
+
+.midContainer {
+  @apply relative w-full max-w-7xl mx-auto;
+}
+
+.midContainer.absolute {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+}
+
+.contentContainer {
+  @apply relative w-full max-w-4xl mx-auto;
+}
+
+h1 {
+  @apply text-4xl font-bold whitespace-pre-line mb-2;
+}
+
+h2 {
+  @apply text-2xl font-bold mb-1;
+}
+
+h3 {
+  @apply text-xl font-bold mb-1;
+}
+
+.buttonOne {
+  @apply rounded-full px-4 py-3 text-white bg-brand/80 hover:bg-brand w-max text-sm;
+}
+
+.buttonTwo {
+  @apply rounded-full px-4 py-3 text-white bg-gray-600 hover:bg-gray-700 w-max text-sm;
+}
+
+.buttonThree {
+  @apply rounded-full px-4 py-3 text-gray-600 bg-gray-50 hover:bg-white w-max text-sm;
+}
+
+.sectionCount {
+  @apply relative flex items-center;
+  height: 100px;
+
+  .sectionNumber {
+    @apply absolute text-8xl opacity-50 cursor-default mx-auto left-0 right-0 font-extrabold block text-center;
+  }
+
+  h2 {
+    @apply mx-auto text-center relative;
+    z-index: 5;
+  }
+
+}
+
+form {
+  input[type=text], select, input[type=email], textarea {
+    @apply mt-1 block w-full rounded-md border-white placeholder:text-white text-white shadow-sm focus:border-white focus:ring focus:ring-white focus:ring-opacity-50;
+    background-color: transparent !important;
+  }
+}

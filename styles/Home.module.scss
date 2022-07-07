@@ -1,0 +1,97 @@
+.Home {
+    padding-top: var(--header-height);
+}
+
+.Swiper {
+    @apply w-full relative;
+    height: var(--carousel-height);
+}
+
+.Slide {
+    @apply relative;
+
+    .Bg {
+        @apply absolute w-full h-full;
+    }
+}
+
+.PageDot {
+    @apply mr-3 bg-gray-500 cursor-pointer w-2 h-2;
+    &.active {
+        @apply bg-brand cursor-default;
+    }
+}
+
+.Section01 {
+    @apply relative;
+    z-index: 10;
+    .Product{
+        @apply relative;
+        .ProductImage{
+            width: 330px;
+            height: 300px;
+            @apply bg-white border my-2 mr-4 p-6 flex justify-center items-center overflow-hidden;
+        }
+        h5{
+            @apply m-2;
+        }
+    }
+}
+
+.Section02 {
+    @apply relative;
+    min-height: 300px;
+    background: linear-gradient(180deg, theme('colors.brand') 0%, theme('colors.brand') 70%, theme('colors.gray.100') 70%);
+
+    .FeatureBox {
+        @apply relative rounded-sm bg-white px-8 py-6 shadow-xl m-4 grid grid-cols-12 gap-2 overflow-hidden;
+        max-width: 40%;
+        flex-grow: 1;
+
+        & > div {
+            @apply p-3 relative z-10;
+        }
+
+        h3 {
+            @apply relative text-gray-600 mt-2;
+        }
+
+        li {
+            @apply list-none text-gray-600 text-sm mt-2 ml-6;
+        }
+
+        .FeatureWatermark {
+            @apply font-extrabold absolute cursor-default opacity-10 text-gray-500 text-6xl mx-auto right-0 bottom-3 whitespace-nowrap uppercase z-0;
+            left: -30%;
+        }
+
+        .FeatureDot {
+            @apply absolute w-2 h-2 bg-gray-600;
+            top: 4px;
+            left: -16px;
+
+            &:first-of-type {
+                @apply bg-brand;
+                top: 10px;
+                left: -2px;
+            }
+        }
+    }
+
+    .FeatureBg {
+        @apply absolute right-0 top-0 pointer-events-none;
+        height: 110%;
+        width: 30%;
+        z-index: 2;
+    }
+}
+
+.Section04 {
+    @apply relative bg-brand overflow-hidden;
+
+    .ContactBg {
+        @apply absolute left-0 top-0 pointer-events-none opacity-20;
+        width: 25%;
+        height: 120%;
+    }
+}
