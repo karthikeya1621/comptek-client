@@ -1,0 +1,36 @@
+.About {
+    padding-top: var(--header-height);
+    @apply bg-gray-50;
+}
+
+.SectionOne {
+    @apply w-full relative;
+
+    .ContentBox {
+        right: -100px;
+        @apply pl-10 pr-14 py-8 rounded shadow-xl relative my-20 bg-white text-gray-900;
+        max-width: 500px;
+        z-index: 5;
+    }
+}
+
+.ContentBox {
+    @apply relative my-20 text-white;
+    right: -100px;
+    max-width: 500px;
+    z-index: 5;
+}
+
+.AboutImageTwo {
+    @apply relative;
+    right: -200px;
+    top: 80px;
+    z-index: 10;
+}
+
+.Content2 {
+    @apply text-sm;
+    b {
+        @apply mb-3 text-brand block;
+    }
+}
