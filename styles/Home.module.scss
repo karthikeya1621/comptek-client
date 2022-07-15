@@ -17,6 +17,9 @@
 
 .PageDot {
     @apply mr-3 bg-gray-500 cursor-pointer w-2 h-2;
+    &.White.active {
+        @apply bg-white;
+    }
     &.active {
         @apply bg-brand cursor-default;
     }

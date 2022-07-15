@@ -19,10 +19,10 @@ export default function Header() {
                     <div className={styles.Menu}>
                         <nav>
                             <li><Link href="/about" passHref={true}><a>About</a></Link></li>
-                            <li>Products</li>
-                            <li>Focus</li>
-                            <li>Clientele</li>
-                            <li>Contact</li>
+                            <li><Link href="/products" passHref={true}><a>Products</a></Link></li>
+                            <li><Link href="/focus" passHref={true}><a>Focus</a></Link></li>
+                            <li><Link href="/clientele" passHref={true}><a>Clientele</a></Link></li>
+                            <li><Link href="/contact" passHref={true}><a>Contact</a></Link></li>
                         </nav>
                     </div>
                     <div className={styles.SocialLinks}>

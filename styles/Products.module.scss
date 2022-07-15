@@ -1,0 +1,12 @@
+.Products {
+    @apply relative;
+    padding-top: var(--header-height);
+}
+
+.Banner {
+    @apply relative w-full bg-brand py-3 flex justify-center overflow-hidden;
+}
+
+.Product {
+    @apply text-sm w-1/2 relative p-2;
+}

@@ -33,7 +33,7 @@ export default function Home({ data }) {
   const fullConfig = resolveConfig(tailwindConfig)
 
   const [slides, setSlides] = useState(data.heroSlides.map((sl) => ({
-    image: sl.backgroundImage ? `${SERVER_HOST_URL}${sl.backgroundImage.data.attributes.url}` : '',
+    image: sl.backgroundImage ? `${sl.backgroundImage.data.attributes.url}` : '',
     heading1: sl.headingOne,
     heading2: sl.headingTwo,
     buttonName: sl.buttonText,
@@ -65,15 +65,15 @@ export default function Home({ data }) {
                 <Image loading="lazy" layout="fill" src={slide.image} objectFit="contain" />
               </div>
               <div className='midContainer h-full flex flex-col justify-center'>
-                <h1 className="text-gray-600">{slide.heading1}</h1>
-                <h1 className="text-brand">{slide.heading2}</h1>
-                <button className="buttonOne flex justify-between mt-4 mb-10" style={{ width: '200px' }}>{slide.buttonName} <span className="mdi mdi-chevron-double-right"></span></button>
+                <h1 className={`${i == 1 ? 'text-white' : 'text-gray-700'} fivenum relative`}>{slide.heading1}</h1>
+                <h1 className={`${i == 1 ? 'text-white' : 'text-brand'}`}>{slide.heading2}</h1>
+                <button className={`${i == 1 ? 'buttonFour' : 'buttonOne'} flex justify-between mt-4 mb-10`} style={{ width: '200px' }}>{slide.buttonName} <span className="mdi mdi-chevron-double-right"></span></button>
               </div>
             </SwiperSlide>)
           }
         </Swiper>
         <div className="midContainer absolute flex z-10" style={{ bottom: resize(120, 'carouselHeight') }}>
-          {slides.map((slide, i) => <div key={i} onClick={() => swiper.slideTo(i)} className={`${styles.PageDot} ${activeIndex == i ? styles.active : ''}`}></div>)}
+          {slides.map((slide, i) => <div key={i} onClick={() => swiper.slideTo(i)} className={`${styles.PageDot} ${activeIndex == i ? styles.active : ''} ${i == 1 ? styles.White : ''}`}></div>)}
         </div>
       </div>
 

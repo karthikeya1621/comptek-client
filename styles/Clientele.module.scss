@@ -1,0 +1,12 @@
+.Clientele {
+    @apply relative;
+    padding-top: var(--header-height);
+}
+
+.Banner {
+    @apply relative w-full bg-brand py-3 flex justify-center overflow-hidden;
+}
+
+.Client {
+    @apply text-sm w-1/4 relative p-2;
+}
