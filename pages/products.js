@@ -30,7 +30,7 @@ export default function Products({ data }) {
                 </div>
             </div>
         </div>
-        <div className="contentContainer flex justify-between py-5">
+        <div className="contentContainer flex flex-wrap justify-between py-5">
             {data.products.map((product, index) => <div className={styles.Product} key={`prod${index}`}>
                 <div className="grid grid-cols-2 w-full relative">
                     <div className="col-span-2 w-full h-48 relative p-6 flex justify-center items-center border-2">

@@ -32,7 +32,7 @@ export default function Clientele({ data }) {
                 </div>
             </div>
 
-            <div className="contentContainer flex justify-between py-5">
+            <div className="contentContainer flex flex-wrap justify-between py-5">
                 {group.Clients.map((client, index) => <div className={styles.Client} key={`client${index}`}>
                     <div className="grid grid-cols-2 w-full relative">
                         <div className="col-span-2 w-full h-48 relative p-6 flex justify-center items-center border-2">
