@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import tailwindConfig from 'tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import { resize } from 'utils/variables';
-import { useForm } from "react-hook-form";
 import { API_URL, ARG_POPULATE_DEEP, SERVER_HOST_URL } from "utils/constants";
 import axios from "axios";
 import { getServerImageUrl } from "utils/functions";
@@ -14,12 +13,12 @@ import { getServerImageUrl } from "utils/functions";
 
 // Images
 import bgImage1 from '@images/bg_image_1.png';
+import ContactForm from "components/ContactForm/ContactForm";
 
 
 export default function Home({ data }) {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+
 
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
@@ -163,30 +162,7 @@ export default function Home({ data }) {
               <small className="text-white">Write to us if you want to talk about how we can work with you or your company.</small>
             </div>
             <div className="col-span-6">
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="grid grid-cols-12 gap-4">
-                  <div className="col-span-6">
-                    <input type="text" autoComplete="off" placeholder="Fullname" {...register("fullname", { required: true })} />
-                  </div>
-                  <div className="col-span-6">
-                    <select autoComplete="off" placeholder="Product" {...register("product", { required: true })} >
-                      <option default value="1">Product</option>
-                    </select>
-                  </div>
-                  <div className="col-span-6">
-                    <input type="email" autoComplete="off" placeholder="Email" {...register("email", { required: true })} />
-                  </div>
-                  <div className="col-span-6">
-                    <input type="text" autoComplete="off" placeholder="Phone" {...register("phone", { required: true })} />
-                  </div>
-                  <div className="col-span-12">
-                    <textarea rows={4} autoComplete="off" placeholder="Message" {...register("message", { required: true })} ></textarea>
-                  </div>
-                </div>
-                <div className="buttons py-6">
-                  <button className="buttonThree relative ml-auto w-max block" type="submit">Send Message <span className="mdi mdi-chevron-double-right"></span></button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
