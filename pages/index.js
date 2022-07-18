@@ -65,7 +65,7 @@ export default function Home({ data }) {
                 <Image loading="lazy" layout="fill" src={slide.image} objectFit="contain" />
               </div>
               <div className='midContainer h-full flex flex-col justify-center'>
-                <h1 className={`${i == 1 ? 'text-white' : 'text-gray-700'} fivenum relative`}>{slide.heading1}</h1>
+                <h1 className={`${i == 1 ? 'text-white fivenum' : 'text-gray-700'} relative`}>{slide.heading1}</h1>
                 <h1 className={`${i == 1 ? 'text-white' : 'text-brand'}`}>{slide.heading2}</h1>
                 <button className={`${i == 1 ? 'buttonFour' : 'buttonOne'} flex justify-between mt-4 mb-10`} style={{ width: '200px' }}>{slide.buttonName} <span className="mdi mdi-chevron-double-right"></span></button>
               </div>
@@ -203,6 +203,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       data: data && data.data && data.data.attributes ? data.data.attributes : null
-    }
+    },
+    revalidate: 10
   }
 }

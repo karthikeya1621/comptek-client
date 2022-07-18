@@ -114,6 +114,7 @@ export async function getStaticProps(context) {
     return {
         props: {
             data: data && data.data && data.data.attributes ? data.data.attributes : null
-        }
+        },
+        revalidate: 10
     }
 }
