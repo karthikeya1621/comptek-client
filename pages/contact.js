@@ -37,7 +37,7 @@ export default function Contact() {
                     <div className="col-span-6">
                         <div className="sectionCount mb-3 w-max">
                             <span className="sectionNumber text-white/30">02</span>
-                            <h2 className="text-white">Let's get in touch!</h2>
+                            <h2 className="text-white">Let&apos;s get in touch!</h2>
                         </div>
                         <small className="text-white">Write to us if you want to talk about how we can work with you or your company.</small>
                     </div>
