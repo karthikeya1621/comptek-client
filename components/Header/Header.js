@@ -4,6 +4,7 @@ import logoImage from '@images/logo_image.png';
 import logoText from '@images/logo_text.png';
 import { resize } from 'utils/variables';
 import Link from "next/link";
+import { tabWhitelist } from "pages/focus/[tab]";
 
 export default function Header() {
     return <div className={styles.Header}>
@@ -20,7 +21,7 @@ export default function Header() {
                         <nav>
                             <li><Link href="/about" passHref={true}><a>About</a></Link></li>
                             <li><Link href="/products" passHref={true}><a>Products</a></Link></li>
-                            <li><Link href="/focus" passHref={true}><a>Focus</a></Link></li>
+                            <li><Link href={"/focus/" + tabWhitelist[0]} passHref={true}><a>Focus</a></Link></li>
                             <li><Link href="/clientele" passHref={true}><a>Clientele</a></Link></li>
                             <li><Link href="/contact" passHref={true}><a>Contact</a></Link></li>
                         </nav>

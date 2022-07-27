@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { SwiperSlide, Swiper } from 'swiper/react';
+import { Autoplay } from "swiper";
 import { useEffect, useState } from 'react';
 import tailwindConfig from 'tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig';
@@ -14,6 +15,7 @@ import { getServerImageUrl } from "utils/functions";
 // Images
 import bgImage1 from '@images/bg_image_1.png';
 import ContactForm from "components/ContactForm/ContactForm";
+import Link from "next/link";
 
 
 export default function Home({ data }) {
@@ -36,6 +38,7 @@ export default function Home({ data }) {
     heading1: sl.headingOne,
     heading2: sl.headingTwo,
     buttonName: sl.buttonText,
+    buttonLink: sl.buttonLink || '',
     slideStyle: {
       backgroundColor: fullConfig.theme.colors.gray[100]
     }
@@ -55,9 +58,12 @@ export default function Home({ data }) {
         <Swiper
           className="h-full"
           slidesPerView={1}
-          onSlideChange={() => setActiveIndex(swiper.activeIndex)}
-          onSwiper={(swiper) => { setSwiper(swiper); }}
+          onSlideChange={() => setActiveIndex(swiper ? swiper.activeIndex : 0)}
+          onSwiper={(swiper) => { if(swiper && swiper.autoplay) swiper.autoplay.start(); setSwiper(swiper); }}
           longSwipesMs={100}
+          autoplay={true} 
+          loop={true}   
+          modules={[Autoplay]}
         > {
             slides.map((slide, i) => <SwiperSlide key={i} style={slide.slideStyle} className={styles.Slide}>
               <div className={styles.Bg}>
@@ -115,7 +121,8 @@ export default function Home({ data }) {
                 {f.featureList.split(';').map((fl, j) => <li key={`featureList${j}`}>{fl.trim()}</li>)}
               </div>
               <div className="col-span-6">
-                <button className="buttonOne">{f.buttonText} <span className="mdi mdi-chevron-double-right"></span></button>
+                <Link href={f.buttonLink || ''}>
+                <button className="buttonOne">{f.buttonText} <span className="mdi mdi-chevron-double-right"></span></button></Link>
               </div>
               <span className={styles.FeatureWatermark}>{f.featureTitle}</span>
             </div>)}
@@ -143,7 +150,7 @@ export default function Home({ data }) {
               <div className="flex flex-col">
                 <h6 className="text-brand mb-1 ml-4">{service.serviceTitle}</h6>
                 <small className="text-gray-700 ml-4">{service.serviceCaption}</small>
-                <button className="buttonOne mt-8">{service.buttonText} <span className="mdi mdi-chevron-double-right"></span></button>
+                <Link href={service.buttonLink || ''}><button className="buttonOne mt-8">{service.buttonText} <span className="mdi mdi-chevron-double-right"></span></button></Link>
               </div>
             </div>
           </div>)}
