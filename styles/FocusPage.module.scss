@@ -5,7 +5,7 @@
     .ContentOne {
         @apply px-12 py-5 rounded shadow-xl max-w-md bg-white my-10 relative;
         b {
-            @apply font-bold text-brand mb-2 inline-block;
+            @apply font-bold text-brand mb-2 block;
         }
         h5 {
             @apply text-gray-800/10 text-7xl font-extrabold absolute right-4 bottom-2;
@@ -30,5 +30,13 @@
 }
 
 .Industrial {
+    @apply relative w-full;
+}
+
+.Design {
+    @apply relative w-full;
+}
+
+.EMS {
     @apply relative w-full;
 }
